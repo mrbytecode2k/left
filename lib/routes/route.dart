@@ -5,6 +5,7 @@ import 'package:left/src/features/data/domain/presentation/login_page/view/login
 import 'package:left/src/features/data/domain/presentation/tabs/tabs_page.dart';
 import 'package:left/src/features/data/domain/presentation/forgot_page/view/forgot_password_page.dart';
 import 'package:left/src/features/data/domain/presentation/signup/view/signup_page.dart';
+import 'package:left/src/features/data/domain/presentation/filter_page/View/filter_page.dart';
 
 
 
@@ -16,5 +17,7 @@ final routes = <String,WidgetBuilder>{
 'sign-up': (BuildContext context)=> SignupPage(),
 'tabs-page': (BuildContext context)=> TabsPage(),
 'searchpage': (BuildContext context)=> SearchPage(),
+'filter': (BuildContext context)=> FilterPage(),
+
 
 };
