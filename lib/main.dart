@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//rutas
+//rutas widgetgit push
 import 'package:left/routes/route.dart';
 
 void main() => runApp(const MyApp());

@@ -3,7 +3,7 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:left/src/features/data/domain/presentation/widgets/colors.dart';
 import 'package:left/src/features/data/domain/presentation/widgets/header_text.dart';
 import 'package:left/src/features/data/domain/presentation/widgets/header_double.dart';
-
+import 'package:left/src/features/data/domain/presentation/widgets/populares_card.dart';
 
 class ExplorerTabs extends StatelessWidget {
   //const ExplorerTabs(Key key) : super (key: key);
@@ -32,13 +32,49 @@ class ExplorerTabs extends StatelessWidget {
               ),
               _sliderCards(),
               _headers(context, "Populares de la Semana", "Ver mas"),
-              _populares(context,
-                  "https://images.unsplash.com/photo-1522992319-0365e5f11656?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
-              _populares(context,
-                  "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
-              _populares(context,
+              popularesCard(
+                  context: context,
+                  image: NetworkImage(
+                    "https://images.unsplash.com/photo-1522992319-0365e5f11656?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+                  ),
+                  title: "Expreso Left",
+                  subTitle: "Club Italo PB 6",
+                  review: "4.8",
+                  rating: "(233 rating)",
+                  buttonText: "Delivery",
+                  hasButton: true),
+
+                  popularesCard(
+                  context: context,
+                  image: NetworkImage(
+                    "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                  ),
+                  title: "Cake Left",
+                  subTitle: "Club Italo PB 6",
+                  review: "4.8",
+                  rating: "(233 rating)",
+                  buttonText: "Delivery",
+                  hasButton: true),
+
+                  popularesCard(
+                  context: context,
+                  image: NetworkImage(
                   "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"),
-               SizedBox(height: 10.0,) ,
+                  title: "Pizza Left",
+                  subTitle: "Club Italo PB 6",
+                  review: "4.8",
+                  rating: "(233 rating)",
+                  buttonText: "Delivery",
+                  hasButton: true),
+              // _populares(context,
+              //     "https://images.unsplash.com/photo-1522992319-0365e5f11656?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
+              // _populares(context,
+              //     "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
+              // _populares(context,
+              //     "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"),
+              SizedBox(
+                height: 10.0,
+              ),
               _headers(context, "Colecciones", "Ver mas"),
               _sliderCollecction(context),
             ],
@@ -51,11 +87,11 @@ class ExplorerTabs extends StatelessWidget {
 
 Widget _topBar(BuildContext context) {
   return Container(
-    padding: const EdgeInsets.only(top:15.0),
+    padding: const EdgeInsets.only(top: 15.0),
     child: Row(
       children: [
         GestureDetector(
-          onTap: ()=> Navigator.pushNamed(context,"searchpage"),
+          onTap: () => Navigator.pushNamed(context, "searchpage"),
           child: Container(
             padding: const EdgeInsets.all(10.0),
             width: 310.0,
@@ -198,7 +234,11 @@ Widget _headers(BuildContext context, String textHeader, String textAction) {
     children: [
       Container(
           alignment: Alignment.centerLeft,
-          child: headerText(texto:textHeader,color: Colors.black, fontWeight:FontWeight.bold, fontSize:20.0)),
+          child: headerText(
+              texto: textHeader,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 20.0)),
       const Spacer(),
       GestureDetector(
         child: Row(
@@ -239,7 +279,10 @@ Widget _populares(BuildContext context, String foto) {
                   Container(
                       margin: EdgeInsets.symmetric(vertical: 7.0),
                       child: headerText(
-                          texto:"Expreso left", color:Colors.black,fontWeight: FontWeight.bold, fontSize:17.0)),
+                          texto: "Expreso left",
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17.0)),
                   Container(
                     alignment: Alignment.centerLeft,
                     margin: EdgeInsets.only(bottom: 5.0),
@@ -257,40 +300,37 @@ Widget _populares(BuildContext context, String foto) {
                       Text(
                         "4.5",
                         style: TextStyle(
-                            color: Colors.black,  
+                            color: Colors.black,
                             fontWeight: FontWeight.w500,
                             fontSize: 13.0),
                       ),
                       Container(
-                        margin: const EdgeInsets.only(left:5.0),
+                        margin: const EdgeInsets.only(left: 5.0),
                         child: Text(
-                          
                           "230 Ratings",
                           style: TextStyle(
                               color: gris,
-                              
                               fontWeight: FontWeight.w500,
                               fontSize: 13.0),
                         ),
                       ),
-            Container(
-                    margin: EdgeInsets.only(left: 40.0),
-                    width:110.0,
-                    height: 20.0,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        //Navigator.pushNamed(context,'login');
-                      },
-                      child: Text("delivery",
-                          style: TextStyle(color: Colors.white, fontSize: 11.0)),
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.deepOrangeAccent,
-                        shape: StadiumBorder(),
-                      ),
-                    ),
-                  )
-            
-            
+                      Container(
+                        margin: EdgeInsets.only(left: 40.0),
+                        width: 110.0,
+                        height: 20.0,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            //Navigator.pushNamed(context,'login');
+                          },
+                          child: Text("delivery",
+                              style: TextStyle(
+                                  color: Colors.white, fontSize: 11.0)),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.deepOrangeAccent,
+                            shape: StadiumBorder(),
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 ],
@@ -303,27 +343,24 @@ Widget _populares(BuildContext context, String foto) {
   );
 }
 
-Widget _sliderCollecction(BuildContext context){
-
+Widget _sliderCollecction(BuildContext context) {
   return Container(
     height: 200.0,
     child: Swiper(
-      itemCount: 4,
-      layout: SwiperLayout.DEFAULT,
-      itemBuilder: (BuildContext context,int index){
-        return ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (BuildContext context,int index){
-            return _tarjetaCollection(context) ; 
-          }
-
-          );}
-      ),
+        itemCount: 4,
+        layout: SwiperLayout.DEFAULT,
+        itemBuilder: (BuildContext context, int index) {
+          return ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (BuildContext context, int index) {
+                return _tarjetaCollection(context);
+              });
+        }),
   );
 }
 
-Widget _tarjetaCollection(BuildContext context){
- return Container(
+Widget _tarjetaCollection(BuildContext context) {
+  return Container(
     margin: const EdgeInsets.all(10),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -338,7 +375,6 @@ Widget _tarjetaCollection(BuildContext context){
                 "https://plus.unsplash.com/premium_photo-1668143358351-b20146dbcc02?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
           ),
         ),
-        
       ],
     ),
   );
