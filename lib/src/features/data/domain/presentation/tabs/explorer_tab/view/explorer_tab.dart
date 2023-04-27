@@ -128,10 +128,16 @@ Widget _topBar(BuildContext context) {
             decoration: BoxDecoration(
               color: Color.fromRGBO(209, 209, 214, 1.0),
               borderRadius: BorderRadius.circular(30),
+             
             ),
+            
+            
             child: IconButton(
+              
               icon: Icon(Icons.filter_list, size: 30, color: Colors.white),
-              onPressed: () {},
+              onPressed: () {
+               Navigator.pushNamed(context, 'filter');
+              },
             ))
       ],
     ),
