@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:left/src/features/presentation/widgets/colors.dart';
-import 'package:left/src/features/presentation/widgets/header_text.dart';
+import 'package:left/src/features/presentation/commons_widgets/colors.dart';
+import 'package:left/src/features/presentation/commons_widgets/Headers/header_text.dart';
 
 Widget HeaderDouble({String textHeader="", String textAction =""}) {
   return Container(
