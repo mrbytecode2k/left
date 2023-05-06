@@ -13,8 +13,8 @@ abstract class _Exceptions{
 }
 
 abstract class ApiService{
-  Future <Map<String,dynamic>> getDataFromPostRequest({ required  Map<String,dynamic> bodyparameter, required String uri,Map<String,String>? headers });
-  Future <Map<String,dynamic>> getDataFromRequest({ required  Map<String,dynamic> bodyparameter, required String url,Map<String,String>? headers });
+  Future <Map<String,dynamic>> getDataFromPostRequest({ required  Map<String,dynamic> bodyParameters, required String uri,Map<String,String>? headers });
+  Future <Map<String,dynamic>> getDataFromPutRequest({ required  Map<String,dynamic> bodyParameters, required String url,Map<String,String>? headers });
   Future <Map<String,dynamic>> getDataFromGetRequest({ required String url,Map<String,String>? headers });
 }
 
@@ -47,10 +47,10 @@ class DefaultApiService  extends ApiService{
 
 
   @override
-  Future<Map<String, dynamic>> getDataFromRequest({required Map<String, dynamic> bodyparameter, required String url, Map<String, String>? headers}) async {
+  Future<Map<String, dynamic>> getDataFromPutRequest({required Map<String, dynamic> bodyParameters, required String url, Map<String, String>? headers}) async {
     // TODO: implement getDataFromPRequest
     final uri =Uri.parse(url);
-    final body = jsonEncode(bodyparameter);
+    final body = jsonEncode(bodyParameters);
     final response= await http.post(uri,headers: headers,body:body);
 
 try {
@@ -75,11 +75,11 @@ try {
 
 
   @override
-  Future<Map<String, dynamic>> getDataFromPostRequest({required Map<String, dynamic> bodyparameter, required String uri, Map<String, String>? headers}) async {
+  Future<Map<String, dynamic>> getDataFromPostRequest({required Map<String, dynamic> bodyParameters, required String uri, Map<String, String>? headers}) async {
     // TODO: implement getDataFromPostRequest
  
     final _url =Uri.parse(uri);
-    final body = jsonEncode(bodyparameter);
+    final body = jsonEncode(bodyParameters);
     final response= await http.post(_url,headers: headers,body:body);
  
 try {

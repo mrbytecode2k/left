@@ -12,12 +12,12 @@ static String singleUpEndpoint="account:signUp?key=";
 static String singleInEndpoint="account:signIN?key=";
 }
 
-abstract class SimpleUpService extends BaseFirebaseService{
+abstract class SignUpService extends BaseFirebaseService{
   String endpoint =  BaseFirebaseService.baseUrl + BaseFirebaseService.singleUpEndpoint + BaseFirebaseService.AdminToken;
   Future <Map <String,dynamic>> signUp({required Map<String,dynamic> bodyParameters});
 }
 
-abstract class SimpleInService extends BaseFirebaseService{
+abstract class SignInService extends BaseFirebaseService{
   String endpoint =  BaseFirebaseService.baseUrl + BaseFirebaseService.singleUpEndpoint + BaseFirebaseService.AdminToken;
   Future <Map <String,dynamic>> signIn({required Map<String,dynamic> bodyParameters});
 
