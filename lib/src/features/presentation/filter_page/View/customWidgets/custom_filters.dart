@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:left/src/features/presentation/widgets/AlertDialog.dart';
-import 'package:left/src/features/presentation/widgets/colors.dart';
+import 'package:left/src/features/presentation/commons_widgets/Alerts/AlertDialog.dart';
+import 'package:left/src/Colors/colors.dart';
 
 
 class CuisinesFilter extends StatefulWidget {

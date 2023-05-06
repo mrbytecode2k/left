@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:left/src/features/presentation/tabs/explorer_tab/view/explorer_tab.dart';
-import 'package:left/src/features/presentation/tabs/order_page/view/order_tab.dart';
+import 'package:left/src/features/presentation/tabs/order_page/view/my_order_tab.dart';
 import 'package:left/src/features/presentation/tabs/favorito_tab/view/favorito_tabs.dart';
 import 'package:left/src/features/presentation/tabs/perfil_tab/view/perfil_tabs.dart';
-import 'package:left/src/features/presentation/widgets/AlertDialog.dart';
+import 'package:left/src/features/presentation/commons_widgets/Alerts/AlertDialog.dart';
 
 class TabsPage extends StatefulWidget {
   const TabsPage({Key? key}) : super(key: key);

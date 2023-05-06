@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:left/src/features/presentation/widgets/header_text.dart';
+import 'package:left/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:left/src/features/presentation/filter_page/View/customWidgets/custom_filters.dart';
-import 'package:left/src/features/presentation/widgets/colors.dart';
+import 'package:left/src/Colors/colors.dart';
 import 'package:left/src/features/presentation/filter_page/View/customWidgets/list_tile_checked.dart';
 import 'package:left/src/features/presentation/filter_page/View/customWidgets/price_filter.dart';
 

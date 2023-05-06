@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:left/src/features/presentation/widgets/colors.dart';
-import 'package:left/src/features/presentation/widgets/header_double.dart';
-import 'package:left/src/features/presentation/widgets/header_text.dart';
+import 'package:left/src/Colors/colors.dart';
+import 'package:left/src/features/presentation/commons_widgets/Headers/header_double.dart';
+import 'package:left/src/features/presentation/commons_widgets/Headers/header_text.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:left/src/features/presentation/widgets/Card_vertical.dart';
-import 'package:left/src/features/presentation/widgets/populares_card.dart';
+import 'package:left/src/features/presentation/commons_widgets/Cards/vertical_card.dart';
+import 'package:left/src/features/presentation/commons_widgets/Cards/populares_card.dart';
 
 class SearchPage extends StatelessWidget {
   //const SearchPage({Key? key }) : super(key: key);

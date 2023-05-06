@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:left/src/features/presentation/widgets/colors.dart';
-import 'package:left/src/features/presentation/widgets/header_text.dart';
-import 'package:left/src/features/presentation/widgets/header_double.dart';
-import 'package:left/src/features/presentation/widgets/populares_card.dart';
+import 'package:left/src/Colors/colors.dart';
+import 'package:left/src/features/presentation/commons_widgets/Headers/header_text.dart';
+import 'package:left/src/features/presentation/commons_widgets/Headers/header_double.dart';
+import 'package:left/src/features/presentation/commons_widgets/Cards/populares_card.dart';
 
 class ExplorerTabs extends StatelessWidget {
   //const ExplorerTabs(Key key) : super (key: key);
@@ -75,7 +75,11 @@ class ExplorerTabs extends StatelessWidget {
               SizedBox(
                 height: 10.0,
               ),
-              _headers(context, "Colecciones", "Ver mas"),
+              GestureDetector(
+                onTap:(){
+                  Navigator.pushNamed(context, 'collection');
+              },
+                child: _headers(context, "Colecciones", "Ver mas")),
               _sliderCollecction(context),
             ],
           ),
@@ -161,76 +165,81 @@ Widget _sliderCards() {
 }
 
 Widget _tarjeta(BuildContext context) {
-  return Container(
-    padding: const EdgeInsets.all(10),
-    child: Column(
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: Image(
-            width: 200.0,
-            height: 250.0,
-            image: NetworkImage(
-                "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"),
+  return GestureDetector(
+    onTap:(){
+      Navigator.pushNamed(context, 'place-page');
+    },
+    child: Container(
+      padding: const EdgeInsets.all(10),
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Image(
+              width: 200.0,
+              height: 250.0,
+              image: NetworkImage(
+                  "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"),
+            ),
           ),
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              margin: EdgeInsets.only(top: 10),
-              child: Text(
-                "Andy & Almuerzos",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 17.0),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 10),
+                child: Text(
+                  "Andy & Almuerzos",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17.0),
+                ),
               ),
-            ),
-            Container(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "Calle Solano 3",
-                style: TextStyle(
-                    color: Theme.of(context).disabledColor,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 13.0),
+              Container(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Calle Solano 3",
+                  style: TextStyle(
+                      color: Theme.of(context).disabledColor,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13.0),
+                ),
               ),
-            ),
-            Row(
-              children: [
-                Icon(Icons.star_rate, color: amarillo, size: 16),
-                Text("4.8",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 13.0)),
-                Text("(233 ratings)",
-                    style: TextStyle(
-                        color: gris,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 13.0)),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 5.0),
-                  width: 80.0,
-                  height: 18.0,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      //Navigator.pushNamed(context,'login');
-                    },
-                    child: Text("Deivery",
-                        style: TextStyle(color: Colors.white, fontSize: 11.0)),
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.orangeAccent,
-                      shape: StadiumBorder(),
+              Row(
+                children: [
+                  Icon(Icons.star_rate, color: amarillo, size: 16),
+                  Text("4.8",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 13.0)),
+                  Text("(233 ratings)",
+                      style: TextStyle(
+                          color: gris,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 13.0)),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    width: 80.0,
+                    height: 18.0,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        //Navigator.pushNamed(context,'login');
+                      },
+                      child: Text("Delivery",
+                          style: TextStyle(color: Colors.white, fontSize: 11.0)),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.orangeAccent,
+                        shape: StadiumBorder(),
+                      ),
                     ),
-                  ),
-                )
-              ],
-            )
-          ],
-        )
-      ],
+                  )
+                ],
+              )
+            ],
+          )
+        ],
+      ),
     ),
   );
 }
@@ -366,22 +375,25 @@ Widget _sliderCollecction(BuildContext context) {
 }
 
 Widget _tarjetaCollection(BuildContext context) {
-  return Container(
-    margin: const EdgeInsets.all(10),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(20.0),
-          child: Image(
-            width: 300.0,
-            height: 150.0,
-            fit: BoxFit.cover,
-            image: NetworkImage(
-                "https://plus.unsplash.com/premium_photo-1668143358351-b20146dbcc02?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
+  return GestureDetector(
+    
+    child: Container(
+      margin: const EdgeInsets.all(10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(20.0),
+            child: Image(
+              width: 300.0,
+              height: 150.0,
+              fit: BoxFit.cover,
+              image: NetworkImage(
+                  "https://plus.unsplash.com/premium_photo-1668143358351-b20146dbcc02?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     ),
   );
 }

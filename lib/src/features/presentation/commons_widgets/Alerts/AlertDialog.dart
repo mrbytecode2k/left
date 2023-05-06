@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import "header_text.dart";
-import 'colors.dart';
+import '../Headers/header_text.dart';
+import '../../../../Colors/colors.dart';
 
 //AssetImage('assets/images/lock.png'),
 Future showAlertDialog(

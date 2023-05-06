@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:left/src/features/presentation/widgets/colors.dart';
+import 'package:left/src/Colors/colors.dart';
 
 
 class PriceFilter extends StatefulWidget {

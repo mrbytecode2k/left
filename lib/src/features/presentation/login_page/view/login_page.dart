@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:left/src/features/presentation/widgets/colors.dart';
-import 'package:left/src/features/presentation/widgets/back_buttom.dart';
+import 'package:left/src/Colors/colors.dart';
+import 'package:left/src/features/presentation/commons_widgets/BackButtom/back_buttom.dart';
 import 'package:left/src/features/presentation/forgot_page/view/forgot_password_page.dart';
 import 'package:left/src/features/presentation/signup/view/signup_page.dart';
 
@@ -44,14 +44,14 @@ class LoginPage extends StatelessWidget {
                  color: Colors.white,
                  borderRadius: BorderRadius.circular(20.0),
                  boxShadow: [
-      BoxShadow(
+      // BoxShadow(
         
-        color: Colors.black,
-        blurRadius: 80,
-        offset: Offset(50, 25), 
-        spreadRadius: 10.0, // has the effect of extending the shadow
-        // Shadow position
-      ),
+      //   color: Colors.black,
+      //   blurRadius: 80,
+      //   offset: Offset(50, 25), 
+      //   spreadRadius: 10.0, // has the effect of extending the shadow
+      //   // Shadow position
+      // ),
 ],
                  ),
               child: Padding(
