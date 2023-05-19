@@ -1,7 +1,7 @@
 import 'package:left/src/Services/FirebaseServices/RealTimeDatabaseService/Interfaces/Interfaces.dart';
-import 'package:left/src/base/ApiService/ApiError.dart';
+import 'package:left/src/Base/AppError/AppError.dart';
 
-import 'package:left/src/base/ApiService/ApiService.dart';
+import 'package:left/src/Base/ApiService/ApiService.dart';
 
 
 abstract class RealtimeDatabaseExceptions {
@@ -35,7 +35,7 @@ class  DefaultRealtimeDatabaseService extends RealtimeDatabaseService{
     var endpoint = baseUrl + path + endUrl;
 
     try {
-      final result = await _apiService.getDataFromPostRequest(bodyParameters: bodyParameters, uri: endpoint);
+      final result = await _apiService.getDataFromPostRequest(bodyParameters: bodyParameters, url: endpoint);
       return result;
     } on Failure catch (f) {
       return f.error;
